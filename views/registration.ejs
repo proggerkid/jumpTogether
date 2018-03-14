@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Registration</h1>
+
+    <% include nav.ejs %>
+
+    <form method='POST' action='/registration'>
+      <label for='username'>Username</label>
+      <input type='text' name='username' id='username'><br>
+      <% if(status.username === 'u'){ %>
+        Username already in use.<br>
+      <% } %>
+      <% if(status.username === 1){ %>
+        Please enter a username.<br>
+      <% } %>
+      <label for='email'>Email</label>
+      <input type='text' name='email' id='email'><br>
+      <% if(status.email === 'e'){ %>
+        Email already in use.<br>
+      <% } %>
+      <% if(status.email === 1){ %>
+        Please enter an email.<br>
+      <% } %>
+      <label for='password'>Password</label>
+      <input type='password' name='password' id='password'><br>
+      <% if(status.password === 1){ %>
+        Please enter a password. <br>
+      <% } %>
+      <input type='submit' value='registrate'>
+    </form>
+
+  </body>
+</html>
