@@ -11,6 +11,8 @@ var handleLogin = require('./handler/handleLogin');
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
+app.use(express.static('./game/public'));
+
 app.use(session({
   secret: 'kejfkejfklejfwlefjkfjwölfj',
   resave: false,
